@@ -1,0 +1,3 @@
+%sql select addr_ip, count(*) as c1 from alert_detection group by addr_ip
+%sql select heure_co, hor-debut, hor_fin from alert_detection where addr_ip = 192.168.X.X
+%sql select heure_co, count(*) from alert_detection where (((heure_co<hor_debut) AND (abs(heure_co - hor_debut)) > 2) OR ((heure_co>hor_fin) AND (abs(heure_co - hor_fin)>2))) group by heure_co
